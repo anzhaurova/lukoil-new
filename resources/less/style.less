@@ -1,0 +1,221 @@
+@import './_vars.less';
+@import './_mixins.less';
+
+/* ___________1. Сброс CSS_____________________ */
+@import './_reset.less';
+
+/* ___________2. Типовые элементы______________ */
+/* _______________2.1. Заголовки_______________ */
+h1,
+h2,
+h3,
+h4 {
+	font-family: @font;
+}
+h2 {
+	font-weight: normal;
+}
+
+/* _______________2.2. Ссылки__________________ */
+a {
+	outline: none;
+	color: @light;
+	text-decoration: none;
+	transition: all .3s ease;
+}
+a:hover,
+a:focus {
+	color: @active;
+	text-decoration: none;
+}
+
+/* _______________2.3. Элементы форм___________ */
+.form {}
+.form__line {
+	margin-bottom: @spacing*2;
+}
+.form__field {
+	padding: 0 10px;
+	width: 100%;
+	height: 42px;
+	line-height: 30px;
+	font: normal 16px @font, sans-serif;
+	color: @light;
+	background: fade(@dark, 30%);
+	border: 1px solid fade(@dark, 30%);
+	.transition();
+}
+.form__field_error {
+	border-color: fade(@red, 70%);
+}
+textarea.form__field {
+	padding-top: @spacing;
+	padding-bottom: @spacing;
+	height: 120px;
+	resize:none;
+}
+.form__submit {
+	padding-top: @spacing;
+}
+
+/* _______________2.4. Сетка___________________ */
+.container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 @spacing;
+	max-width: 1230px;
+}
+.container__row {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	align-content: flex-end;
+	margin: 0 -@spacing;
+}
+.container__col {
+	padding: 0 @spacing;
+	width: 50%;
+	min-height: 1px;
+}
+
+/* _______________2.5. Базовые_________________ */
+html {
+	height: 100%;
+	font-size: 100%;
+}
+body {
+	height: 100%;
+	font-family: @baseFont;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	color: @bodyColor;
+	background: @bodyBg;
+}
+img {
+	max-width: 100%;
+	outline: none;
+}
+
+.none {
+	display: none;
+}
+.no-scroll {
+	overflow: hidden;
+}
+
+.button {
+	display: inline-block;
+	padding: 8px 40px;
+	font-family: @font;
+	-webkit-appearance: none;
+	border: 1px solid @dark;
+	background: @dark;
+	color: @light;
+	.transition();
+}
+.text {
+	p {
+		margin-bottom: @spacing;
+	}
+}
+
+/* _______________2.6. Шрифты__________________ */
+// @import './_fonts.less';
+
+/* _______________2.7. Другие__________________ */
+// @import './lib/jquery.fancybox.min.less';
+// @import './lib/formstyler.less';
+
+/* ___________3. HEADER  (Шапка)_______________ */
+.header {
+	display: block;
+}
+.header__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.header__list {
+	display: flex;
+	justify-content: space-between;
+}
+.header__logo {
+	flex: 0 0 17%;
+}
+.header__nav {
+	flex-basis: 50%;
+}
+.header__link {
+	font-weight: 400;
+	line-height: 34px;
+	text-transform: uppercase;
+}
+.header__contacts {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+/* ___________4. SECTION (Контент)_____________ */
+.section__wrap {
+	width: 100%;
+	max-width:1350px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+.section-first {
+	background: url("../img/bg-first.png") center bottom no-repeat;
+	height: 1340px;
+	position: relative;
+}
+.section__content_img-one {
+	position: absolute;
+	top: 6%;
+	left: 16%;
+}
+.section__content_img-two {
+	position: absolute;
+	top:14%;
+	right: 22%;
+}
+
+
+/* ___________5. FOOTER  (Подвал)______________ */
+.footer {
+	display: block;
+}
+.footer_attached-bottom {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.footer__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer__list {
+	display: flex;
+	justify-content: space-between;
+}
+.footer__logo {
+	flex: 0 0 17%;
+}
+.footer__nav {
+	flex-basis: 50%;
+}
+.footer__link {
+	font-weight: 400;
+	line-height: 34px;
+	text-transform: uppercase;
+}
+.footer__contacts {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 700;
+}
+@import './style-adaptive.less';
